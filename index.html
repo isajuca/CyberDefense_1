@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cyber Defense: Proteja sua Smart Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <!-- ==================== SIDEBAR ==================== -->
+    <aside class="sidebar" id="sidebar">
+      <div class="brand-box">
+        <div class="brand-shield" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <path d="M8.5 12.2L12 9.2l3.5 3"/>
+            <path d="M9.7 11.7V15h4.6v-3.3"/>
+          </svg>
+        </div>
+        <div class="brand-title">CYBER<span>DEFENSE</span></div>
+      </div>
+
+      <nav class="nav-menu" aria-label="Menu principal">
+        <button class="nav-btn active" data-view="home">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5L12 3l9 7.5"/><path d="M5 9.5V20a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9.5"/></svg>
+          Início
+        </button>
+        <button class="nav-btn" data-view="play">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4M15 11h.01M18 13h.01"/></svg>
+          Jogar
+        </button>
+        <button class="nav-btn" data-view="howto">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg>
+          Como Jogar
+        </button>
+        <button class="nav-btn" data-view="progress">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+          Progresso
+        </button>
+        <button class="nav-btn" data-view="achievements">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+          Conquistas
+          <span class="nav-badge" id="nav-ach-count">0/8</span>
+        </button>
+        <button class="nav-btn" data-view="content">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          Conteúdos
+        </button>
+        <button class="nav-btn" data-view="settings">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9c.26.6.85 1 1.51 1H21a2 2 0 1 1 0 4h-.09c-.66 0-1.25.4-1.51 1z"/></svg>
+          Configurações
+        </button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <strong>Simulador IoT</strong>
+        Proteja sua Smart Home<br />
+        Identifique • Reconheça • Proteja
+      </div>
+    </aside>
+
+    <!-- ==================== TOP HUD BAR ==================== -->
+    <header class="topbar">
+      <div class="topbar-left">
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Abrir menu">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+        </button>
+        <div class="hud-level-pill">
+          <div class="hud-level-label">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+            <span id="hud-level-text">Nível 1</span>
+          </div>
+          <div class="hud-dots" id="hud-dots" title="Progresso de dispositivos neste nível"></div>
+        </div>
+      </div>
+
+      <div class="topbar-right">
+        <div class="hud-security-pill" id="hud-security-pill" title="Pontuação atual de segurança da residência">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+          <span>Segurança <strong id="hud-security-value">33%</strong></span>
+        </div>
+
+        <button class="hud-icon-btn" id="btn-alerts" title="Central de Alertas" aria-label="Abrir central de alertas">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          <span class="alert-count-badge" id="alert-count-badge">4</span>
+        </button>
+
+        <button class="hud-icon-btn" id="btn-sound" title="Ativar/Desativar Som" aria-label="Alternar som">
+          <svg id="icon-sound-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+          <svg id="icon-sound-off" style="display:none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+        </button>
+
+        <button class="hud-icon-btn" id="btn-fullscreen" title="Tela Cheia" aria-label="Alternar tela cheia">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- ==================== MAIN CONTENT AREA ==================== -->
+    <main class="main-content">
+      <!-- 1. HOME / HERO VIEW -->
+      <section class="view-section active" id="view-home">
+        <div class="hero-wrapper">
+          <div class="hero-grid">
+            <div class="hero-copy">
+              <div class="hero-eyebrow">
+                <span class="hero-eyebrow-dot"></span>
+                Simulador de Segurança IoT
+              </div>
+
+              <h1 class="hero-headline">
+                Cyber Defense:<br />
+                <span>Proteja sua Smart Home</span>
+              </h1>
+
+              <p class="hero-desc">
+                Explore os cômodos de uma Smart Home em <strong>3D interativo</strong>. Gire a casa em 360°, inspecione logs reais, identifique vulnerabilidades, reconheça ameaças e aplique medidas de proteção eficazes.
+              </p>
+
+              <div class="hero-cta-row">
+                <button class="btn-hero-start" id="hero-play-btn">
+                  <span>Começar Simulação</span>
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </button>
+                <button class="btn-hero-guide" id="hero-howto-btn">
+                  <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                  Como Jogar
+                </button>
+              </div>
+
+              <div class="hero-pillars">
+                <div class="hero-pillar-item">
+                  <span class="hero-pillar-num">01</span>
+                  <strong>Identificar</strong>
+                  <span>Diferencie falhas reais de dispositivos já seguros.</span>
+                </div>
+                <div class="hero-pillar-item">
+                  <span class="hero-pillar-num">02</span>
+                  <strong>Reconhecer</strong>
+                  <span>Mapeie ataques como Botnet, MitM e Força Bruta.</span>
+                </div>
+                <div class="hero-pillar-item">
+                  <span class="hero-pillar-num">03</span>
+                  <strong>Proteger</strong>
+                  <span>Aplique contramedidas e gere seu relatório final.</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="hero-showcase-card">
+              <div class="hero-showcase-top">
+                <div class="showcase-dots"><i></i><i></i><i></i></div>
+                <div class="showcase-status">
+                  <span class="hero-eyebrow-dot"></span>
+                  MAQUETE 3D INTERATIVA • 3 NÍVEIS
+                </div>
+              </div>
+              <div class="hero-visual-frame" id="hero-bg-wrap"></div>
+              <div class="hero-devices-mini-grid" id="hero-callouts-layer"></div>
+              <div class="hero-tip-bar" id="hero-tip-bar">
+                <strong>Dica IoT:</strong>
+                <span>Passe o mouse ou clique em um dispositivo acima para explorar os riscos comuns em casas conectadas.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. PLAY / SIMULATOR VIEW -->
+      <section class="view-section" id="view-play">
+        <div class="page-container">
+          <div class="sim-toolbar">
+            <div class="level-selector-group" id="level-selector-group"></div>
+            <div class="sim-actions-right">
+              <button class="btn-outline" id="btn-reset-level">Reiniciar Nível</button>
+              <button class="btn-emerald" id="btn-open-report">Ver Relatório Final</button>
+            </div>
+          </div>
+
+          <div class="room-tabs-bar">
+            <div class="room-tabs" id="room-tabs"></div>
+            <div class="sim-progress-meta">
+              <span id="sim-progress-text">0 / 6 dispositivos analisados</span>
+              <div class="mini-progress-track">
+                <div class="mini-progress-fill" id="sim-progress-fill" style="width:0%"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="sim-workspace">
+            <!-- Interactive Room Stage -->
+            <div class="stage-card">
+              <div class="stage-header">
+                <div>
+                  <div class="stage-room-title" id="stage-room-title">Entrada & Fachada</div>
+                  <div class="stage-room-desc" id="stage-room-desc"></div>
+                </div>
+                <div class="stage-legend">
+                  <span class="legend-dot"><i style="background:#38bdf8"></i>Pendente</span>
+                  <span class="legend-dot"><i style="background:#fbbf24"></i>Alerta</span>
+                  <span class="legend-dot"><i style="background:#34d399"></i>Protegido</span>
+                  <span class="legend-dot"><i style="background:#fb7185"></i>Risco</span>
+                </div>
+              </div>
+
+              <div class="stage-canvas stage-canvas-3d">
+                <div id="room-scene-wrap" class="canvas-3d-host"></div>
+                <div class="hotspots-layer labels-3d-layer" id="hotspots-layer"></div>
+
+                <div class="viewport-3d-hint">
+                  <span>Arraste para girar 360°</span>
+                  <span>•</span>
+                  <span>Scroll para zoom</span>
+                  <span>•</span>
+                  <span>Clique no dispositivo</span>
+                </div>
+
+                <div class="viewport-3d-controls">
+                  <button class="cam-ctrl-btn" id="btn-cam-reset" title="Resetar visão da câmera">Resetar 3D</button>
+                  <button class="cam-ctrl-btn" id="btn-cam-rotate" title="Alternar rotação automática">Girar</button>
+                  <button class="cam-ctrl-btn icon-only" id="btn-cam-zin" title="Aproximar zoom">+</button>
+                  <button class="cam-ctrl-btn icon-only" id="btn-cam-zout" title="Afastar zoom">−</button>
+                </div>
+              </div>
+
+              <div class="room-devices-strip" id="room-devices-strip"></div>
+            </div>
+
+            <!-- Device Inspector Console -->
+            <aside class="inspector-card" id="inspector-card"></aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. FINAL REPORT VIEW -->
+      <section class="view-section" id="view-report">
+        <div class="page-container" id="report-container"></div>
+      </section>
+
+      <!-- 4. HOW TO PLAY VIEW -->
+      <section class="view-section" id="view-howto">
+        <div class="page-container">
+          <div class="section-header">
+            <h2>Como Jogar — Cyber Defense</h2>
+            <p>
+              Você é o especialista em segurança responsável por auditar e proteger uma Smart Home. Nem todo dispositivo está com problema: analise com atenção os dados técnicos antes de agir!
+            </p>
+          </div>
+
+          <div class="cards-grid-2">
+            <div class="glass-card">
+              <div class="step-num-pill">01</div>
+              <h3>Explore os Cômodos e Dispositivos</h3>
+              <p>Navegue entre a <strong>Entrada & Fachada</strong>, <strong>Sala de Estar</strong> e <strong>Escritório & Cozinha</strong>. Clique nos dispositivos conectados na cena para abrir o painel de diagnóstico técnico.</p>
+            </div>
+            <div class="glass-card">
+              <div class="step-num-pill">02</div>
+              <h3>Observe os Alertas e Logs</h3>
+              <p>Consulte o sino de <strong>Alertas</strong> no topo e leia atentamente o firmware, protocolos, senhas e logs do terminal. Alguns aparelhos já estão configurados corretamente — evite falsos positivos!</p>
+            </div>
+            <div class="glass-card">
+              <div class="step-num-pill">03</div>
+              <h3>Tome Decisões em 3 Etapas</h3>
+              <p>Para cada dispositivo vulnerável, identifique a falha, reconheça a ameaça correspondente e aplique a medida de proteção mais eficaz. Cada escolha afeta sua <strong>Pontuação de Segurança (%)</strong> em tempo real.</p>
+            </div>
+            <div class="glass-card">
+              <div class="step-num-pill">04</div>
+              <h3>Analise o Relatório Final</h3>
+              <p>Ao concluir a casa, gere o <strong>Relatório de Proteção</strong> com todas as vulnerabilidades encontradas, escolhas realizadas, recomendações de boas práticas e selo final de blindagem.</p>
+            </div>
+          </div>
+
+          <div class="reqs-banner">
+            <h3>Os 3 Pilares Obrigatórios do Desafio</h3>
+            <div class="reqs-grid">
+              <div class="req-box">
+                <strong>1. Identificar Vulnerabilidades</strong>
+                Diferenciar dispositivos já seguros daqueles com senhas padrão, firmware antigo, portas expostas ou protocolos inseguros.
+              </div>
+              <div class="req-box">
+                <strong>2. Reconhecer Ameaças</strong>
+                Compreender qual ataque explora cada brecha: Força Bruta, MitM, Botnet DDoS, Pharming DNS, Ransomware ou Invasão Física.
+              </div>
+              <div class="req-box">
+                <strong>3. Selecionar Medidas de Proteção</strong>
+                Aplicar contramedidas completas (WPA3, 2FA, atualização de firmware, VLAN IoT, MQTTS/HTTPS, backup 3-2-1).
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top:22px">
+            <button class="btn-emerald" id="howto-start-btn">Ir para o Simulador agora ›</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. PROGRESS VIEW -->
+      <section class="view-section" id="view-progress">
+        <div class="page-container">
+          <div class="section-header">
+            <h2>Seu Progresso na Smart Home</h2>
+            <p>Acompanhe seu desempenho em cada nível, melhor pontuação de segurança e histórico de auditorias.</p>
+          </div>
+          <div id="progress-content"></div>
+        </div>
+      </section>
+
+      <!-- 6. ACHIEVEMENTS VIEW -->
+      <section class="view-section" id="view-achievements">
+        <div class="page-container">
+          <div class="section-header">
+            <h2>Conquistas & Medalhas</h2>
+            <p>Desbloqueie insígnias dominando autenticação, redes IoT, atualizações de firmware e resposta a incidentes.</p>
+          </div>
+          <div class="cards-grid-2" id="achievements-grid"></div>
+        </div>
+      </section>
+
+      <!-- 7. KNOWLEDGE BASE / CONTENT VIEW -->
+      <section class="view-section" id="view-content">
+        <div class="page-container">
+          <div class="section-header">
+            <h2>Conteúdos de Cibersegurança IoT</h2>
+            <p>Guia rápido de referência para consulta durante o desafio — conceitos essenciais de segurança em casas conectadas.</p>
+          </div>
+          <div class="cards-grid-2" id="content-grid"></div>
+        </div>
+      </section>
+
+      <!-- 8. SETTINGS VIEW -->
+      <section class="view-section" id="view-settings">
+        <div class="page-container">
+          <div class="section-header">
+            <h2>Configurações</h2>
+            <p>Personalize a experiência do simulador ou reinicie o progresso salvo no navegador.</p>
+          </div>
+
+          <div class="settings-list">
+            <div class="setting-row">
+              <div>
+                <strong>Efeitos Sonoros</strong>
+                <p style="font-size:13px;color:var(--text-secondary)">Ativa feedbacks sonoros leves ao inspecionar dispositivos e aplicar proteções.</p>
+              </div>
+              <label class="switch">
+                <input type="checkbox" id="setting-sound" checked />
+                <span class="slider"></span>
+              </label>
+            </div>
+
+            <div class="setting-row">
+              <div>
+                <strong>Destacar Alertas nos Hotspots</strong>
+                <p style="font-size:13px;color:var(--text-secondary)">Destaca em âmbar dispositivos citados na Central de Alertas (desative para modo investigação pura).</p>
+              </div>
+              <label class="switch">
+                <input type="checkbox" id="setting-hints" checked />
+                <span class="slider"></span>
+              </label>
+            </div>
+
+            <div class="setting-row">
+              <div>
+                <strong>Reduzir Animações</strong>
+                <p style="font-size:13px;color:var(--text-secondary)">Desativa pulsos e transições para maior conforto visual.</p>
+              </div>
+              <label class="switch">
+                <input type="checkbox" id="setting-reduced-motion" />
+                <span class="slider"></span>
+              </label>
+            </div>
+
+            <div class="setting-row">
+              <div>
+                <strong>Resetar Todo o Progresso</strong>
+                <p style="font-size:13px;color:var(--text-secondary)">Limpa pontuações salvas, relatórios e conquistas desbloqueadas.</p>
+              </div>
+              <button class="btn-danger-outline" id="btn-reset-all">Resetar Dados</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- ==================== ALERTS DRAWER ==================== -->
+  <div class="drawer-backdrop" id="drawer-backdrop"></div>
+  <aside class="alerts-drawer" id="alerts-drawer" aria-label="Central de Alertas">
+    <div class="drawer-head">
+      <h3>Central de Alertas (<span id="drawer-level-name">Nível 1</span>)</h3>
+      <button class="hud-icon-btn" id="btn-close-drawer" aria-label="Fechar alertas">✕</button>
+    </div>
+    <div class="drawer-body" id="alerts-drawer-body"></div>
+  </aside>
+
+  <!-- ==================== TOAST STACK ==================== -->
+  <div class="toast-stack" id="toast-stack" aria-live="polite"></div>
+
+  <!-- Scripts loaded sequentially for 100% offline file:// and http:// compatibility -->
+  <script src="js/vendor/three.min.js"></script>
+  <script src="js/sound.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/scenes.js"></script>
+  <script src="js/house3d.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
